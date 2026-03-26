@@ -1,11 +1,11 @@
 {
-  "name": "comcom.vrmc.gltf",
+  "name": "com.vrmc.gltf",
   "versions": {
     "0.131.0": {
-      "name": "comcom.vrmc.gltf",
+      "name": "com.vrmc.gltf",
       "version": "0.131.0",
       "dist": {
-        "tarball": "https://matsutaka.github.io/poc-upm-repo/tarballs/comcom.vrmc.gltf-0.131.0.tgz"
+        "tarball": "https://matsutaka-pxv.github.io/poc-upm-repo/com.vrmc.gltf-0.131.0.tgz"
       }
     }
   },
