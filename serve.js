@@ -10,6 +10,11 @@ const MIME = {
   '':     'application/json',
 };
 
+// GitHub Pages が誤認識する Content-Type を再現するファイル名
+const CONTENT_TYPE_OVERRIDES = {
+  '/com.vrmc.gltf': 'model/gltf+json',
+};
+
 http.createServer((req, res) => {
   const urlPath = req.url.split('?')[0];
   const filePath = path.join(ROOT, urlPath);
@@ -17,18 +22,16 @@ http.createServer((req, res) => {
   fs.readFile(filePath, (err, data) => {
     const status = err ? 404 : 200;
     const ext = path.extname(filePath);
-    const contentType = err ? 'text/plain' : (MIME[ext] ?? 'application/octet-stream');
+    const defaultContentType = err ? 'text/plain' : (MIME[ext] ?? 'application/octet-stream');
+    const contentType = CONTENT_TYPE_OVERRIDES[urlPath] ?? defaultContentType;
 
-    // ログ: タイムスタンプ / メソッド / URL / ステータス / ヘッダー
     console.log([
       new Date().toISOString(),
       req.method,
       req.url,
       `→ ${status}`,
+      `(${contentType})`,
     ].join('  '));
-
-    // リクエストヘッダーの詳細（Unityが何を送ってくるか確認用）
-    console.log('  Headers:', JSON.stringify(req.headers, null, 2));
 
     if (err) {
       res.writeHead(404);

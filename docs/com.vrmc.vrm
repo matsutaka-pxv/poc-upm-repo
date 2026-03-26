@@ -23,14 +23,15 @@
       "maintainers": [],
       "contributors": [],
       "dist": {
-        "tarball": "https://matsutaka-pxv.github.io/poc-upm-repo/tarballs/com.vrmc.vrm-0.131.0.tgz"
+        "tarball": "https://matsutaka-pxv.github.io/poc-upm-repo/tarballs/com.vrmc.vrm-0.131.0.tgz",
+        "shasum": "4393b2974dfce60f4c6903ccfbf2627b062c0cf9"
       }
     }
   },
   "time": {
-    "modified": "2026-03-26T08:40:25.369Z",
-    "created": "2026-03-26T08:40:25.369Z",
-    "0.131.0": "2026-03-26T08:40:25.369Z"
+    "modified": "2026-03-26T09:18:37.024Z",
+    "created": "2026-03-26T09:18:37.024Z",
+    "0.131.0": "2026-03-26T09:18:37.024Z"
   },
   "users": {},
   "readme": "ERROR: No README data found!",
