@@ -19,7 +19,7 @@
         "name": "VRM Consortium"
       },
       "dist": {
-        "tarball": "https://github.io/matsutaka-pxv/poc-upm-repo/tarballs/com.vrmc.vrm-0.131.0.tgz"
+        "tarball": "https://matsutaka-pxv.github.io/poc-upm-repo/tarballs/com.vrmc.vrm-0.131.0.tgz"
       }
     }
   }
