@@ -1,4 +1,5 @@
 {
+  "_id": "com.vrmc.univrm",
   "name": "com.vrmc.univrm",
   "description": "VRM importer",
   "dist-tags": {
@@ -8,19 +9,32 @@
     "0.131.0": {
       "name": "com.vrmc.univrm",
       "version": "0.131.0",
+      "displayName": "VRM",
       "description": "VRM importer",
       "unity": "2021.3",
       "dependencies": {
         "com.vrmc.gltf": "0.131.0",
         "com.unity.ugui": "1.0.0"
       },
-      "displayName": "VRM",
       "author": {
         "name": "VRM Consortium"
       },
+      "_id": "com.vrmc.univrm@0.131.0",
+      "maintainers": [],
+      "contributors": [],
       "dist": {
-        "tarball": "https://matsutaka-pxv.github.io/poc-upm-repo/tarballs/com.vrmc.univrm-0.131.0.tgz"
+        "tarball": "https://matsutaka-pxv.github.io/poc-upm-repo/tarballs/com.vrmc.univrm-0.131.0.tgz",
+        "shasum": "7182353fed820af7949c18046ed3dbdbd729ec91",
+        "integrity": "sha512-wcWLcwBBd+pAepQiHYc8pOCa3/kegmJZSxJ8oawX1vB7c4b+tseQwZjuPEsxGeFCWY3tvk1EQdAX7cPxsMOH+Q=="
       }
     }
-  }
+  },
+  "time": {
+    "modified": "2026-03-26T08:04:07.883Z",
+    "created": "2026-03-26T08:04:07.883Z",
+    "0.131.0": "2026-03-26T08:04:07.883Z"
+  },
+  "users": {},
+  "readme": "ERROR: No README data found!",
+  "_attachments": {}
 }

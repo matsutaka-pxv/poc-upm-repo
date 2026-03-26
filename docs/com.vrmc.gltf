@@ -1,4 +1,5 @@
 {
+  "_id": "com.vrmc.gltf",
   "name": "com.vrmc.gltf",
   "description": "GLTF importer and exporter",
   "dist-tags": {
@@ -8,6 +9,7 @@
     "0.131.0": {
       "name": "com.vrmc.gltf",
       "version": "0.131.0",
+      "displayName": "UniGLTF",
       "description": "GLTF importer and exporter",
       "unity": "2021.3",
       "dependencies": {
@@ -17,13 +19,25 @@
         "com.unity.test-framework": "1.4.6",
         "com.unity.mathematics": "1.2.6"
       },
-      "displayName": "UniGLTF",
       "author": {
         "name": "VRM Consortium"
       },
+      "_id": "com.vrmc.gltf@0.131.0",
+      "maintainers": [],
+      "contributors": [],
       "dist": {
-        "tarball": "https://matsutaka-pxv.github.io/poc-upm-repo/tarballs/com.vrmc.gltf-0.131.0.tgz"
+        "tarball": "https://matsutaka-pxv.github.io/poc-upm-repo/tarballs/com.vrmc.gltf-0.131.0.tgz",
+        "shasum": "c81714d04b136c15044d4ea2d17362886de3a58b",
+        "integrity": "sha512-1qVtuEIv9xmIIeM/V0F/4NIKpynhgovnvzWwgHiNGgxNwEmj8FufFOfCGY+E03ClU40oyos9SFBepwHSP3TO5g=="
       }
     }
-  }
+  },
+  "time": {
+    "modified": "2026-03-26T08:04:07.883Z",
+    "created": "2026-03-26T08:04:07.883Z",
+    "0.131.0": "2026-03-26T08:04:07.883Z"
+  },
+  "users": {},
+  "readme": "ERROR: No README data found!",
+  "_attachments": {}
 }

@@ -3,13 +3,22 @@
 // 実行:   node generate-registry.js
 // 環境変数: REGISTRY_URL (省略時 http://localhost:4873)
 
-const fs   = require('fs');
-const path = require('path');
-const tar  = require('tar');
+const fs     = require('fs');
+const path   = require('path');
+const tar    = require('tar');
+const crypto = require('crypto');
 
 const DOCS         = path.join(__dirname, 'docs');
 const TARBALLS_DIR = path.join(DOCS, 'tarballs');
 const REGISTRY_URL = process.env.REGISTRY_URL ?? 'http://localhost:4873';
+
+// ── ハッシュ計算 ────────────────────────────────────────────────
+function hashFile(filePath) {
+  const data = fs.readFileSync(filePath);
+  const shasum    = crypto.createHash('sha1').update(data).digest('hex');
+  const integrity = 'sha512-' + crypto.createHash('sha512').update(data).digest('base64');
+  return { shasum, integrity };
+}
 
 // ── ファイル名パース ────────────────────────────────────────────
 // com.example.mypkg-0.123.4.tgz → { name, version }
@@ -64,39 +73,60 @@ async function main() {
     (grouped[parsed.name] ??= []).push({ version: parsed.version, filename });
   }
 
+  const now = new Date().toISOString();
+
   // packument を生成
   for (const [pkgName, entries] of Object.entries(grouped)) {
     console.log(`[${pkgName}]  ${entries.length} version(s)`);
     let latest = null;
     const versions = {};
+    const time = {};
 
     for (const { version, filename } of entries) {
       const tgzPath = path.join(TARBALLS_DIR, filename);
       const pkgJson = await readPackageJson(tgzPath);
+      const { shasum, integrity } = hashFile(tgzPath);
 
+      // 不要フィールドを除外してから展開
       const { keywords, samples, repository, ...restPkgJson } = pkgJson;
 
       versions[version] = {
+        // デフォルト値
         name:         pkgName,
         version,
+        displayName:  '',
         description:  '',
         unity:        '',
         dependencies: {},
+        // package.json の内容で上書き
         ...restPkgJson,
+        // 生成フィールド（上書き禁止）
+        _id:          `${pkgName}@${version}`,
+        maintainers:  [],
+        contributors: [],
         dist: {
-          tarball: `${REGISTRY_URL}/tarballs/${filename}`,
+          tarball:   `${REGISTRY_URL}/tarballs/${filename}`,
+          shasum,
+          integrity,
         },
       };
+
+      time[version] = now;
 
       if (!latest || semverGt(version, latest)) latest = version;
       console.log(`  + ${version}`);
     }
 
     const packument = {
-      name:        pkgName,
-      description: versions[latest]?.description ?? '',
-      'dist-tags': { latest },
+      _id:          pkgName,
+      name:         pkgName,
+      description:  versions[latest]?.description ?? '',
+      'dist-tags':  { latest },
       versions,
+      time:         { modified: now, created: now, ...time },
+      users:        {},
+      readme:       'ERROR: No README data found!',
+      _attachments: {},
     };
 
     const outPath = path.join(DOCS, pkgName);
