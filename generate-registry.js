@@ -3,20 +3,13 @@
 // 実行:   node generate-registry.js
 // 環境変数: REGISTRY_URL (省略時 http://localhost:4873)
 
-const fs     = require('fs');
-const path   = require('path');
-const tar    = require('tar');
-const crypto = require('crypto');
+const fs   = require('fs');
+const path = require('path');
+const tar  = require('tar');
 
 const DOCS         = path.join(__dirname, 'docs');
 const TARBALLS_DIR = path.join(DOCS, 'tarballs');
 const REGISTRY_URL = process.env.REGISTRY_URL ?? 'http://localhost:4873';
-
-// ── ハッシュ計算 ────────────────────────────────────────────────
-function sha1File(filePath) {
-  const data = fs.readFileSync(filePath);
-  return crypto.createHash('sha1').update(data).digest('hex');
-}
 
 // ── ファイル名パース ────────────────────────────────────────────
 // com.example.mypkg-0.123.4.tgz → { name, version }
@@ -83,7 +76,6 @@ async function main() {
     for (const { version, filename } of entries) {
       const tgzPath = path.join(TARBALLS_DIR, filename);
       const pkgJson = await readPackageJson(tgzPath);
-      const shasum = sha1File(tgzPath);
 
       // 不要フィールドを除外してから展開
       const { keywords, samples, repository, ...restPkgJson } = pkgJson;
@@ -104,7 +96,6 @@ async function main() {
         contributors: [],
         dist: {
           tarball: `${REGISTRY_URL}/tarballs/${filename}`,
-          shasum,
         },
       };
 
