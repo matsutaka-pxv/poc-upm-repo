@@ -1,0 +1,13 @@
+{
+  "name": "com.vrmc.vrm",
+  "versions": {
+    "0.131.0": {
+      "name": "com.vrmc.vrm",
+      "version": "0.131.0",
+      "dist": {
+        "tarball": "http://localhost:4873/tarballs/com.vrmc.vrm-0.131.0.tgz"
+      }
+    }
+  },
+  "dist-tags": { "latest": "0.131.0" }
+}

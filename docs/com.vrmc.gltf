@@ -1,0 +1,13 @@
+{
+  "name": "comcom.vrmc.gltf",
+  "versions": {
+    "0.131.0": {
+      "name": "comcom.vrmc.gltf",
+      "version": "0.131.0",
+      "dist": {
+        "tarball": "http://localhost:4873/tarballs/comcom.vrmc.gltf-0.131.0.tgz"
+      }
+    }
+  },
+  "dist-tags": { "latest": "0.131.0" }
+}

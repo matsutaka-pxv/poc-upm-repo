@@ -1,0 +1,13 @@
+{
+  "name": "com.vroid.sdk.unity",
+  "versions": {
+    "0.0.1": {
+      "name": "com.vroid.sdk.unity",
+      "version": "0.0.1",
+      "dist": {
+        "tarball": "http://localhost:4873/tarballs/com.vroid.sdk.unity-0.0.1.tgz"
+      }
+    }
+  },
+  "dist-tags": { "latest": "0.0.1" }
+}
