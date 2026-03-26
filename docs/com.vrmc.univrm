@@ -1,13 +1,26 @@
 {
   "name": "com.vrmc.univrm",
+  "description": "VRM importer",
+  "dist-tags": {
+    "latest": "0.131.0"
+  },
   "versions": {
     "0.131.0": {
       "name": "com.vrmc.univrm",
       "version": "0.131.0",
+      "description": "VRM importer",
+      "unity": "2021.3",
+      "dependencies": {
+        "com.vrmc.gltf": "0.131.0",
+        "com.unity.ugui": "1.0.0"
+      },
+      "displayName": "VRM",
+      "author": {
+        "name": "VRM Consortium"
+      },
       "dist": {
-        "tarball": "https://matsutaka-pxv.github.io/poc-upm-repo/com.vrmc.univrm-0.131.0.tgz"
+        "tarball": "http://localhost:4873/tarballs/com.vrmc.univrm-0.131.0.tgz"
       }
     }
-  },
-  "dist-tags": { "latest": "0.131.0" }
+  }
 }

@@ -1,0 +1,6 @@
+# バイナリ
+*.tgz    binary
+
+# 拡張子なし JSON (packument, /-/all) を明示的にテキスト扱い
+docs/com.*    text eol=lf
+docs/-/all    text eol=lf
