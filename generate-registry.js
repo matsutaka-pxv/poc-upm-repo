@@ -13,11 +13,9 @@ const TARBALLS_DIR = path.join(DOCS, 'tarballs');
 const REGISTRY_URL = process.env.REGISTRY_URL ?? 'http://localhost:4873';
 
 // ── ハッシュ計算 ────────────────────────────────────────────────
-function hashFile(filePath) {
+function sha1File(filePath) {
   const data = fs.readFileSync(filePath);
-  const shasum    = crypto.createHash('sha1').update(data).digest('hex');
-  const integrity = 'sha512-' + crypto.createHash('sha512').update(data).digest('base64');
-  return { shasum, integrity };
+  return crypto.createHash('sha1').update(data).digest('hex');
 }
 
 // ── ファイル名パース ────────────────────────────────────────────
@@ -85,7 +83,7 @@ async function main() {
     for (const { version, filename } of entries) {
       const tgzPath = path.join(TARBALLS_DIR, filename);
       const pkgJson = await readPackageJson(tgzPath);
-      const { shasum, integrity } = hashFile(tgzPath);
+      const shasum = sha1File(tgzPath);
 
       // 不要フィールドを除外してから展開
       const { keywords, samples, repository, ...restPkgJson } = pkgJson;
@@ -105,9 +103,8 @@ async function main() {
         maintainers:  [],
         contributors: [],
         dist: {
-          tarball:   `${REGISTRY_URL}/tarballs/${filename}`,
+          tarball: `${REGISTRY_URL}/tarballs/${filename}`,
           shasum,
-          integrity,
         },
       };
 
