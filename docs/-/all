@@ -1,20 +1,20 @@
 {
-    "com.vrmc.gltf": {
-        "name": "com.vrmc.gltf",
-        "dist-tags": {
-            "latest": "0.131.0"
-        }
-    },
-    "com.vrmc.univrm": {
-        "name": "com.vrmc.univrm",
-        "dist-tags": {
-            "latest": "0.131.0"
-        }
-    },
-    "com.vrmc.vrm": {
-        "name": "com.vrmc.vrm",
-        "dist-tags": {
-            "latest": "0.131.0"
-        }
+  "com.vrmc.gltf": {
+    "name": "com.vrmc.gltf",
+    "dist-tags": {
+      "latest": "0.131.0"
     }
+  },
+  "com.vrmc.univrm": {
+    "name": "com.vrmc.univrm",
+    "dist-tags": {
+      "latest": "0.131.0"
+    }
+  },
+  "com.vrmc.vrm": {
+    "name": "com.vrmc.vrm",
+    "dist-tags": {
+      "latest": "0.131.0"
+    }
+  }
 }
