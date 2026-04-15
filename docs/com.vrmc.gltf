@@ -2,16 +2,15 @@
   "_id": "com.vrmc.gltf",
   "name": "com.vrmc.gltf",
   "description": "GLTF importer and exporter",
-  "dist-tags": {
-    "latest": "0.131.0"
-  },
   "versions": {
     "0.131.0": {
+      "_id": "com.vrmc.gltf@0.131.0",
       "name": "com.vrmc.gltf",
       "version": "0.131.0",
       "displayName": "UniGLTF",
       "description": "GLTF importer and exporter",
       "unity": "2021.3",
+      "readme": "ERROR: No README data found!",
       "dependencies": {
         "com.unity.modules.animation": "1.0.0",
         "com.unity.modules.imgui": "1.0.0",
@@ -22,9 +21,6 @@
       "author": {
         "name": "VRM Consortium"
       },
-      "_id": "com.vrmc.gltf@0.131.0",
-      "maintainers": [],
-      "contributors": [],
       "dist": {
         "tarball": "https://github.com/matsutaka-pxv/UniVRM/releases/download/0.131.0-poc.1/com.vrmc.gltf-0.131.0.tgz",
         "shasum": "df42b94ea833d16f0419a23a06aeda28ad89b343"
@@ -32,11 +28,9 @@
     }
   },
   "time": {
-    "modified": "2026-03-26T09:24:57.542Z",
-    "created": "2026-03-26T09:24:57.542Z",
     "0.131.0": "2026-03-26T09:24:57.542Z"
   },
-  "users": {},
-  "readme": "ERROR: No README data found!",
-  "_attachments": {}
+  "dist-tags": {
+    "latest": "0.131.0"
+  },
 }
